@@ -1,0 +1,130 @@
+ZEAL SHOP - DEPLOYMENT PROMPT FOR KIMI CLI
+==========================================
+
+TASK: Deploy the ZEAL occult apparel website to a subdomain of zedseclabs.co.za
+
+PROJECT LOCATION: /home/cxb3rf1lth/Projects/web/zeal-shop
+
+SUBDOMAIN TO USE: shop.zedseclabs.co.za
+
+STEPS TO PERFORM:
+================
+
+1. NAVIGATE TO PROJECT
+   cd /home/cxb3rf1lth/Projects/web/zeal-shop
+
+2. INSTALL DEPENDENCIES
+   npm install
+
+3. BUILD THE PROJECT
+   npm run build
+
+4. VERIFY BUILD OUTPUT
+   - Check that dist/ folder exists
+   - Verify dist/images/zeal-logo.jpg exists
+   - Ensure dist/index.html exists
+
+5. DEPLOY TO NETLIFY (RECOMMENDED)
+   Option A - Using Netlify CLI:
+   - Install netlify-cli: npm install -g netlify-cli
+   - Deploy: netlify deploy --prod --dir=dist
+   
+   Option B - Manual upload:
+   - Go to https://app.netlify.com/drop
+   - Drag and drop the dist/ folder
+   - Get the assigned netlify.app domain
+
+6. CONFIGURE CUSTOM DOMAIN
+   In Netlify dashboard:
+   - Go to Site settings → Domain management
+   - Add custom domain: shop.zedseclabs.co.za
+   - Note the DNS records provided by Netlify
+
+7. UPDATE GODADDY DNS
+   Required DNS records for shop.zedseclabs.co.za:
+   
+   Option A (CNAME - Recommended for Netlify):
+   Type: CNAME
+   Name: shop
+   Value: [your-netlify-site].netlify.app
+   TTL: 3600 (1 hour)
+   
+   Option B (A Record for apex domain):
+   Type: A
+   Name: shop
+   Value: [Netlify load balancer IP: 75.2.60.5 or 99.83.231.61]
+   TTL: 3600
+
+8. VERIFY SSL
+   - Ensure HTTPS is enabled in Netlify
+   - SSL certificate should auto-provision
+
+9. TEST DEPLOYMENT
+   - Visit https://shop.zedseclabs.co.za
+   - Check all pages load correctly
+   - Test admin panel (password: 66696)
+   - Verify images display
+
+GODADDY DNS ACCESS REQUIREMENTS:
+================================
+
+To modify DNS for zedseclabs.co.za, you need:
+
+1. GoDaddy Account Access:
+   - Username/email for the account
+   - Password (or temporary access code)
+   
+2. OR Domain Management Access:
+   - Domain is managed under a GoDaddy account
+   - You have delegate access to the domain
+   
+3. Alternative - DNS Management Only:
+   - Access to DNS management page
+   - Can add/modify A, CNAME, MX records
+
+4. Required Info:
+   - Domain: zedseclabs.co.za
+   - Current nameservers (if external DNS is used)
+   - Ability to modify DNS records
+
+DNS RECORDS TO ADD:
+==================
+
+For shop.zedseclabs.co.za subdomain:
+
+Record Type: CNAME
+Host: shop
+Points to: [your-netlify-domain].netlify.app
+TTL: 1 Hour
+
+VERIFICATION:
+============
+
+After DNS propagation (can take up to 48 hours, usually 1-4 hours):
+1. Run: nslookup shop.zedseclabs.co.za
+2. Should resolve to Netlify servers
+3. Website should load at https://shop.zedseclabs.co.za
+
+ADMIN PANEL ACCESS:
+==================
+
+- Click lock icon in bottom right
+- Password: 66696
+
+PROJECT DETAILS:
+===============
+
+- 44 Major Arcana products
+- 2 Collections: Celestial & Shadow
+- Payment gateways: Stripe, PayPal, PayFast
+- Virtual Dressing Room with 3D garment display
+- Virtual Closet for favorites
+- Full admin dashboard
+
+NOTES:
+======
+
+- No database required - uses localStorage
+- All images are in /public/images/
+- Admin password is hardcoded: 66696
+- Site is fully static - can be hosted on any static host

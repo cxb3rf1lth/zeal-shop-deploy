@@ -1,0 +1,76 @@
+╔════════════════════════════════════════════════════════════════╗
+║               ZEAL SHOP - QUICK DEPLOY GUIDE                   ║
+╚════════════════════════════════════════════════════════════════╝
+
+The Netlify CLI is experiencing permission issues with the existing
+site. Here are working alternatives:
+
+═══════════════════════════════════════════════════════════════════
+METHOD 1: Netlify Drop (EASIEST - 30 seconds)
+═══════════════════════════════════════════════════════════════════
+
+1. Open browser and go to:
+   https://app.netlify.com/drop
+
+2. Drag and drop the dist folder from:
+   /home/cxb3rf1lth/Projects/web/zeal-shop/dist
+
+3. Your site will be live instantly with a random URL
+
+4. (Optional) Go to site settings and change the name to:
+   zeal-shop or zeal-zedseclabs
+
+═══════════════════════════════════════════════════════════════════
+METHOD 2: Manual Deploy to Existing Site
+═══════════════════════════════════════════════════════════════════
+
+1. Go to:
+   https://app.netlify.com/sites/zeal-zedseclabs/deploys
+
+2. Scroll down to "Deploy manually"
+
+3. Drag and drop the dist folder
+
+4. This updates your existing zeal.zedseclabs.co.za site
+
+═══════════════════════════════════════════════════════════════════
+METHOD 3: Create New Site via Web UI
+═══════════════════════════════════════════════════════════════════
+
+1. Go to: https://app.netlify.com/
+2. Click "Add new site" → "Deploy manually"
+3. Drag and drop the dist folder
+4. Site will be live at: https://[random-name].netlify.app
+5. Go to Domain settings to add custom domain:
+   zeal.zedseclabs.co.za
+
+═══════════════════════════════════════════════════════════════════
+WHAT TO DEPLOY
+═══════════════════════════════════════════════════════════════════
+
+Folder: /home/cxb3rf1lth/Projects/web/zeal-shop/dist
+Contents:
+  ✓ index.html (2.2 KB)
+  ✓ assets/ (JS, CSS files)
+  ✓ images/ (zeal-logo.jpg, zeal-sigil-main.jpg)
+
+Or use the ZIP file:
+  /home/cxb3rf1lth/Projects/web/zeal-shop/zeal-production-deploy.zip
+
+═══════════════════════════════════════════════════════════════════
+AFTER DEPLOYMENT
+═══════════════════════════════════════════════════════════════════
+
+Test these features:
+□ https://zeal.zedseclabs.co.za loads
+□ Summoning Seal animation plays (gold rings + embers)
+□ "ENTER" button appears and works
+□ Click to enter main site
+□ Product section shows "The ZEAL Hoodie"
+□ Color selection (Black/Grey/White) works
+□ Size selection (S/M/L/XL/XXL) works
+□ "Add to Cart" functions
+□ Cart shows item with R1,299 price
+□ Admin login with password: 66696
+
+═══════════════════════════════════════════════════════════════════
